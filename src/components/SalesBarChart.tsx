@@ -1,12 +1,13 @@
+// /components/SalesBarChart.tsx
+
 import React from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 interface Props {
-  data: { month: string; [key: string]: number }[];
-  year: string;
+  data: { month: string; sales: number }[];
 }
 
-const SalesBarChart: React.FC<Props> = ({ data, year }) => {
+const SalesBarChart: React.FC<Props> = ({ data }) => {
   return (
     <ResponsiveContainer width="100%" height={350}>
       <BarChart
@@ -34,7 +35,7 @@ const SalesBarChart: React.FC<Props> = ({ data, year }) => {
           height={36}
         />
         <Bar
-          dataKey={year}
+          dataKey="sales"
           fill="#3b82f6"
           radius={[10, 10, 0, 0]}
           barSize={40}

@@ -1,19 +1,63 @@
+
+
 "use client";
-import React, { useState, Suspense } from "react";
+import React, { useState, Suspense, useMemo } from "react";
 import ChartSwitcher from "@/components/ChartSwitcher";
 import { salesData } from "@/data/sales";
 
-const SalesBarChart = React.lazy(() => import("@/components/SalesBarChart"));
-const SalesLineChart = React.lazy(() => import("@/components/SalesLineChart"));
-const SalesPieChart = React.lazy(() => import("@/components/SalesPieChart"));
-const SalesAreaChart = React.lazy(() => import("@/components/SalesAreaChart"));
-const SalesRadarChart = React.lazy(() => import("@/components/SalesRadarChart"));
+const SalesBarChart = React.lazy(() => import("../components/SalesBarChart"));
+const SalesLineChart = React.lazy(() => import("../components/SalesLineChart"));
+// const SalesPieChart = React.lazy(() => import("../components/SalesPieChart"));
+const SalesAreaChart = React.lazy(() => import("../components/SalesAreaChart"));
+const SalesRadarChart = React.lazy(() => import("../components/SalesRadarChart"));
 
 const years = ["2022", "2023", "2024"];
+
+interface SalesData {
+  month: string;
+  "2022": number;
+  "2023": number;
+  "2024": number;
+}
 
 const Dashboard: React.FC = () => {
   const [chartType, setChartType] = useState("bar");
   const [selectedYear, setSelectedYear] = useState("2022");
+
+  const typedSalesData: SalesData[] = salesData as SalesData[];
+
+  const aggregatedData = useMemo(() => {
+    const monthlySales: { [key: string]: number } = {};
+    const yearKey = selectedYear as keyof SalesData;
+
+    // Sum sales for each month
+    typedSalesData.forEach(item => {
+      const month = item.month;
+      const sales = item[yearKey] as number;
+      if (monthlySales[month]) {
+        monthlySales[month] += sales;
+      } else {
+        monthlySales[month] = sales;
+      }
+    });
+
+   
+    const monthOrder = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    
+    return monthOrder.map(month => ({
+      month: month,
+      sales: monthlySales[month] || 0, 
+    }));
+  }, [selectedYear, typedSalesData]);
+
+ 
+  const commonChartData = aggregatedData;
+
+  const pieChartData = aggregatedData.map(item => ({
+    name: item.month,
+    value: item.sales
+  }));
 
   return (
     <main className="min-h-screen p-8 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 animate-fade-in text-gray-800 dark:text-white">
@@ -34,11 +78,11 @@ const Dashboard: React.FC = () => {
         </section>
         <section className="w-full md:w-2/3 mx-auto p-6 bg-white dark:bg-gray-800 rounded-xl shadow-2xl">
           <Suspense fallback={<div className="text-center">Loading chart...</div>}>
-            {chartType === "bar" && <SalesBarChart data={salesData} year={selectedYear} />}
-            {chartType === "line" && <SalesLineChart data={salesData} year={selectedYear} />}
-            {chartType === "pie" && <SalesPieChart data={salesData} />}
-            {chartType === "area" && <SalesAreaChart data={salesData} year={selectedYear} />}
-            {chartType === "radar" && <SalesRadarChart data={salesData} year={selectedYear} />}
+            {chartType === "bar" && <SalesBarChart data={commonChartData} />}
+            {chartType === "line" && <SalesLineChart data={commonChartData} />}
+            
+            {chartType === "area" && <SalesAreaChart data={commonChartData} />}
+            {chartType === "radar" && <SalesRadarChart data={commonChartData} />}
           </Suspense>
         </section>
       </div>
