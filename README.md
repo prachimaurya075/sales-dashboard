@@ -41,7 +41,7 @@ To get a local copy of this project up and running, follow these simple steps.
 ### Prerequisites
 
 * Node.js (v18 or higher)
-* npm or yarn
+* npm
 
 ### Installation
 
