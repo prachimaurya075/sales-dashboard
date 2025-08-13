@@ -15,15 +15,10 @@ A modern, interactive sales dashboard application built with *Next.js 15, **Type
 
 You can view a live version of this project here:
 
-- *Live URL:* [https://your-sales-dashboard-demo.vercel.app](https://your-sales-dashboard-demo.vercel.app)
+- *Live URL:* [https://sales-dashboard-ht3c.vercel.app]
 
 (Note: Please replace the placeholder URL with your actual deployment link once the project is live on a platform like Vercel or Netlify.)
 
-## 📸 Screenshots
-
-Here are some visual examples of the dashboard in action:
-
-A screenshot showing the sales data in various chart formats.
 
 (Note: Replace the image paths and descriptions with your own screenshots once you have added them to your GitHub repository.)
 
