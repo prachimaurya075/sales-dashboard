@@ -21,6 +21,7 @@ You can view a live version of this project here:
 
 # Screenshot
 ![img alt](https://github.com/prachimaurya075/sales-dashboard/blob/main/Screenshot%202025-08-13%20175322.png?raw=true)
+![img alt](https://github.com/prachimaurya075/sales-dashboard/blob/main/Screenshot%202025-08-13%20175334.png?raw=true)
 
 ## 🛠 Tech Stack
 
