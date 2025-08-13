@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 📈 Sales Dashboard
 
-## Getting Started
+A modern, interactive sales dashboard application built with *Next.js 15, **TypeScript, and **Tailwind CSS*. This project visualizes sales data from 2022, 2023, and 2024 using multiple chart types, following an atomic design principle.
 
-First, run the development server:
+✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* *Dynamic Data Visualization:* Utilizes Recharts to display sales data in various chart formats, including Bar, Line, Pie, Area, and Radar charts.
+* *Yearly Data Filtering:* Users can filter the data by year (2022, 2023, 2024) to analyze performance trends.
+* *API Integration:* The application is built to fetch real data from an API, rather than using mock-up data.
+* *Responsive Design:* The dashboard layout and charts are fully responsive, providing a consistent experience across all devices.
+* *Atomic Structural Principle:* The project is structured using an atomic design approach to ensure scalability and maintainability.
+* *Custom Favicon:* A unique favicon is included for a professional look.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##  Live Demo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can view a live version of this project here:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- *Live URL:* [https://your-sales-dashboard-demo.vercel.app](https://your-sales-dashboard-demo.vercel.app)
 
-## Learn More
+(Note: Please replace the placeholder URL with your actual deployment link once the project is live on a platform like Vercel or Netlify.)
 
-To learn more about Next.js, take a look at the following resources:
+## 📸 Screenshots
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Here are some visual examples of the dashboard in action:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+A screenshot showing the sales data in various chart formats.
 
-## Deploy on Vercel
+(Note: Replace the image paths and descriptions with your own screenshots once you have added them to your GitHub repository.)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠 Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- *Framework:* Next.js 15
+- *Language:* TypeScript
+- *Styling:* Tailwind CSS
+- *Chart Library:* Recharts
+
+## 📦 Installation & Setup
+
+To get a local copy of this project up and running, follow these simple steps.
+
+### Prerequisites
+
+* Node.js (v18 or higher)
+* npm or yarn
+
+### Installation
+
+1.  *Clone the repository:*
+    bash
+    git clone [https://github.com/prachimaurya075/sales-dashboard.git](https://github.com/prachimaurya075/sales-dashboard.git)
+    cd sales-dashboard
+    
+2.  *Install dependencies:*
+    bash
+    npm install
+    
+   
+    
+3.  *Run the development server:*
+    bash
+    npm run dev
+    
+    
+    
+Open [http://localhost:3000](http://localhost:3000/) 
